@@ -1,6 +1,5 @@
 {
   "name": "alfa-partners-grid",
-  "main": "./dist/vue-component-source.common.js",
   "private": false,
   "version": "1.0.0",
   "description": "",
@@ -32,9 +31,6 @@
     "stylelint": "stylelint 'src/**/*.css' 'src/**/*.pcss' 'src/**/*.vue' --fix",
     "up": "npx npm-check-updates -u & npm i && npm audit fix"
   },
-  "files": [
-    "dist/*"
-  ],
   "dependencies": {
     "bowser": "^2.9.0",
     "css-has-pseudo": "^1.0.0",
@@ -43,6 +39,7 @@
     "normalize.css": "^8.0.1",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
+    "vue-mq": "^1.0.1",
     "vue-property-decorator": "^8.4.1",
     "vue2-transitions": "^0.3.0"
   },
@@ -55,7 +52,6 @@
     "@vue/cli-plugin-typescript": "^4.3.1",
     "@vue/cli-service": "^4.3.1",
     "@vue/eslint-config-airbnb": "^5.0.2",
-    "@vue/eslint-config-typescript": "^5.0.2",
     "chokidar-cli": "^2.1.0",
     "commitizen": "^4.0.4",
     "cq-prolyfill": "^0.4.0",

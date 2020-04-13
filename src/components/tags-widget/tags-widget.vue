@@ -66,7 +66,7 @@
 </script>
 
 <template>
-  <section class="tags-widget">
+  <nav class="tags-widget">
     <button
       v-for="{ name, isActive } in state"
       :key="name"
@@ -79,17 +79,18 @@
     >
       {{ name }}
     </button>
-  </section>
+  </nav>
 </template>
 
 <style lang="postcss" scoped>
   .tags-widget {
     display: flex;
+    width: 100%;
     flex-wrap: wrap;
-    margin-bottom: -15px;
+    margin-bottom: -5px;
 
     & > * {
-      margin-bottom: 15px;
+      margin-bottom: 5px;
     }
 
     & > :not(:last-child) {

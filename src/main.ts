@@ -1,7 +1,8 @@
-import '@/plugins/css-has-pseudo';
-import '@/plugins/bowser';
-import '@/plugins/vue-component-source';
 import '@/assets/styles/index.pcss';
+import '@/plugins/bowser';
+import '@/plugins/css-has-pseudo';
+import '@/plugins/vue-component-source';
+import '@/plugins/vue-mq';
 
 import Vue from 'vue';
 

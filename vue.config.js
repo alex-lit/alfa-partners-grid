@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/vue-component-source/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/alfa-partners-grid/' : '/',
 
   outputDir: process.env.OUTPUT_DIR || 'dist',
 

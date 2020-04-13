@@ -120,30 +120,67 @@
     colors = TagColors;
 
     /**
-     * Отображать изображение,
+     * Отображать изображение
      */
     showImage: boolean = false;
+
+    /**
+     * Адаптивная ширина в зависимости от резрешения дисплея
+     */
+    get adaptiveWidth(): number {
+      switch ((this as any).$mq) {
+        case 'laptop':
+          if (Number(this.width) > 3) return 3;
+          break;
+        case 'tablet':
+          if (Number(this.width) > 2) return 2;
+          break;
+        case 'mobile':
+          if (Number(this.width) > 1) return 1;
+          break;
+
+        default:
+          break;
+      }
+      return Number(this.width) <= 4 ? Number(this.width) : 4;
+    }
+
+    /**
+     * Позиционирование тегов
+     */
+    get tagsPosition(): string {
+      let position = 'relative';
+      if (this.showImage && this.adaptiveWidth === 1) {
+        position = 'absolute';
+      }
+      return position;
+    }
   }
 </script>
 
 <template>
-  <article
+  <component
+    :is="isShowNavigation ? 'article' : 'a'"
+    :href="isShowNavigation ? null : link"
     :class="[
-      width > 1 ? `news-card--colspan--${width}` : null,
+      adaptiveWidth > 1 ? `news-card--colspan--${adaptiveWidth}` : null,
       {
         'news-card': true,
         'news-card--filled-by-color': isFillByColor,
       },
     ]"
     :style="{
-      '--width': width,
+      '--width': adaptiveWidth,
       '--height': height,
       '--background-color': colors[tags[0]],
     }"
   >
-    <nav class="news-card__tags">
-      <tag-widget :tags="tags"></tag-widget>
-    </nav>
+    <tag-widget
+      v-if="tagsPosition === 'absolute'"
+      :class="['news-card__tags', `news-card__tags--position--${tagsPosition}`]"
+      :tags="tags"
+    ></tag-widget>
+
     <figure v-if="image" class="news-card__image-wrap">
       <fade-transition>
         <img
@@ -156,6 +193,12 @@
       </fade-transition>
     </figure>
     <div class="news-card__content">
+      <tag-widget
+        v-if="tagsPosition === 'relative'"
+        :class="['news-card__tags', `news-card__tags--position--${tagsPosition}`]"
+        :tags="tags"
+      ></tag-widget>
+
       <header class="news-card__title">{{ title }}</header>
       <div class="news-card__description">{{ description }}</div>
       <nav v-if="isShowNavigation" class="news-card__navigation">
@@ -164,7 +207,7 @@
         </a>
       </nav>
     </div>
-  </article>
+  </component>
 </template>
 
 <style lang="postcss" scoped>
@@ -172,11 +215,17 @@
     position: relative;
     display: block;
     overflow: hidden;
+    min-width: 230px;
     background-color: var(--white);
     border-radius: 4px;
     grid-column-end: span var(--width);
     grid-row-end: span var(--height);
+    text-decoration: none;
     transition-duration: 0.3s;
+
+    &:hover {
+      box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.05);
+    }
 
     &--filled-by-color {
       display: flex;
@@ -193,18 +242,20 @@
   }
 
   .news-card__tags {
-    position: absolute;
     z-index: 1;
-    top: 23px;
-    left: 20px;
-    width: calc(100% - 40px);
+    margin-bottom: 12px;
     pointer-events: none;
 
+    &--position {
+      &--absolute {
+        position: absolute;
+        top: 23px;
+        left: 20px;
+        width: calc(100% - 40px);
+      }
+    }
+
     @nest .news-card--filled-by-color & {
-      position: relative;
-      top: 0;
-      left: 0;
-      display: flex;
       justify-content: center;
 
       & >>> .tags-widget {
@@ -238,10 +289,14 @@
   }
 
   .news-card__content {
+    display: flex;
     min-width: 230px;
+    flex-direction: column;
+    flex-grow: 1;
     padding: 24px 20px;
 
     @nest .news-card--filled-by-color & {
+      justify-content: center;
       padding: 20px;
     }
 

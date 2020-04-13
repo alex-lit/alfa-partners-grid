@@ -6,11 +6,10 @@ module.exports = {
   extends: [
     'plugin:vue/recommended',
     '@vue/airbnb',
-    '@vue/typescript',
+    // '@vue/typescript',
     'plugin:import/recommended',
     'plugin:jsdoc/recommended',
     'plugin:sonarjs/recommended',
-
     'prettier',
     'plugin:prettier/recommended',
     'prettier/vue',

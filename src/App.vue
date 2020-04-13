@@ -58,12 +58,11 @@
 <template>
   <main class="app">
     <div class="app__container">
-      <nav class="app__tags-wrap">
-        <tags-widget
-          :tags="['travel', 'explorers', 'nature', 'сельское хояйство', 'корма', 'science']"
-          @change="filter"
-        ></tags-widget>
-      </nav>
+      <tags-widget
+        class="app__tags-wrap"
+        :tags="['travel', 'explorers', 'nature', 'сельское хояйство', 'корма', 'science']"
+        @change="filter"
+      ></tags-widget>
 
       <fade-transition group class="app__grid" tag="section">
         <news-card v-for="card in filteredContent" :key="card.id" v-bind="card"></news-card>
@@ -89,7 +88,7 @@
 
   .app__tags-wrap {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   .app__grid {
