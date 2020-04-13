@@ -2,7 +2,7 @@
   {
     "width": 1,
     "height": 1,
-    "image": "/assets/media/images/pansions.jpg",
+    "image": "assets/media/images/pansions.jpg",
     "isFillByColor": false,
     "tags": ["travel"],
     "title": "Robot’s Penguin Disguise Keeps Birds",
@@ -13,7 +13,7 @@
   {
     "width": 2,
     "height": 1,
-    "image": "/assets/media/images/man.png",
+    "image": "assets/media/images/man.png",
     "isFillByColor": false,
     "tags": ["explorers"],
     "title": "5 Things We Learned From X-Men: Days of Future Past",
@@ -46,7 +46,7 @@
   {
     "width": 1,
     "height": 1,
-    "image": "/assets/media/images/cities.jpg",
+    "image": "assets/media/images/cities.jpg",
     "isFillByColor": false,
     "tags": ["explorers"],
     "title": "Stunning Changes Along Colorado River",
@@ -68,7 +68,7 @@
   {
     "width": 1,
     "height": 1,
-    "image": "/assets/media/images/partners.jpg",
+    "image": "assets/media/images/partners.jpg",
     "isFillByColor": false,
     "tags": ["nature"],
     "title": "Offbeat Portraits Give Stars a New Turn",
@@ -79,7 +79,7 @@
   {
     "width": 1,
     "height": 1,
-    "image": "/assets/media/images/rooms.jpg",
+    "image": "assets/media/images/rooms.jpg",
     "isFillByColor": false,
     "tags": ["explorers"],
     "title": "Must See Places of the New Year",
@@ -90,7 +90,7 @@
   {
     "width": 1,
     "height": 1,
-    "image": "/assets/media/images/transports.jpg",
+    "image": "assets/media/images/transports.jpg",
     "isFillByColor": false,
     "tags": ["science"],
     "title": "Robot’s Penguin Disguise Keeps Birds",
@@ -101,7 +101,7 @@
   {
     "width": 1,
     "height": 1,
-    "image": "/assets/media/images/airlines.jpg",
+    "image": "assets/media/images/airlines.jpg",
     "isFillByColor": false,
     "tags": ["travel"],
     "title": "Stunning Video Reveals Invisible CO2",
