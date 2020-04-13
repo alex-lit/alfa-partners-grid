@@ -161,6 +161,7 @@
 <template>
   <component
     :is="isShowNavigation ? 'article' : 'a'"
+    v-cloak
     :href="isShowNavigation ? null : link"
     :class="[
       adaptiveWidth > 1 ? `news-card--colspan--${adaptiveWidth}` : null,
