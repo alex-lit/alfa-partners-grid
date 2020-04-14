@@ -71,7 +71,7 @@
       v-for="{ name, isActive } in state"
       :key="name"
       :style="{
-        'background-color': colors[name],
+        '--background-color': colors[name],
       }"
       :class="['tags-widget__tag', isActive ? null : 'tags-widget__tag--disabled']"
       type="button"
@@ -105,6 +105,7 @@
   .tags-widget__tag {
     padding: 0 5px;
     border: none;
+    background-color: var(--background-color);
     border-radius: 3px;
     color: var(--white);
     cursor: pointer;
@@ -116,8 +117,13 @@
     letter-spacing: 1px;
     line-height: 17px;
     text-transform: uppercase;
-    transition-duration: 0.3s;
+    transition-duration: 0.1s;
     white-space: nowrap;
+
+    &:hover {
+      box-shadow: 2px 2px 0 var(--background-color);
+      transform: translate(-2px, -2px);
+    }
 
     &--disabled {
       opacity: 0.5;

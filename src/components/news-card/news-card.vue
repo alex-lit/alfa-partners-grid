@@ -150,7 +150,7 @@
      */
     get tagsPosition(): string {
       let position = 'relative';
-      if (this.showImage && this.adaptiveWidth === 1) {
+      if (this.image && this.adaptiveWidth === 1) {
         position = 'absolute';
       }
       return position;
@@ -225,7 +225,7 @@
     transition-duration: 0.3s;
 
     &:hover {
-      box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.1);
     }
 
     &--filled-by-color {
@@ -287,6 +287,11 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transition-duration: 0.6s;
+
+    @nest .news-card:hover & {
+      filter: grayscale(1);
+    }
   }
 
   .news-card__content {

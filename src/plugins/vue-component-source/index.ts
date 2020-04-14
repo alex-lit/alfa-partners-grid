@@ -1,7 +1,6 @@
+import VueComponentSource from '@alexlit/vue-component-source';
 import Vue from 'vue';
 
-import VueComponentSource from './vue-component-source';
-
 Vue.use(VueComponentSource, {
-  enabled: true,
+  enabled: process.env.NODE_ENV === 'development',
 });
