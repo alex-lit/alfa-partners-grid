@@ -40,7 +40,7 @@
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-mq": "^1.0.1",
-    "vue-property-decorator": "^8.4.1",
+    "vue-property-decorator": "^9.1.2",
     "vue2-transitions": "^0.3.0"
   },
   "devDependencies": {
